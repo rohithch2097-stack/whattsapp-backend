@@ -6,7 +6,7 @@ COPY . .
 
 RUN chmod +x ./gradlew
 
-RUN ./gradlew clean build --no-daemon -x test
+RUN ./gradlew clean bootJar --stacktrace --info -x test
 
 EXPOSE 8080
 
