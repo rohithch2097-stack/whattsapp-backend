@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:21
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY . .
 
 RUN chmod +x ./gradlew
 
-RUN ./gradlew clean bootJar --stacktrace --info -x test
+RUN ./gradlew clean bootJar --no-daemon -x test
 
 EXPOSE 8080
 
