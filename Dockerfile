@@ -1,13 +1,17 @@
-FROM eclipse-temurin:21
+FROM gradle:8.14.4-jdk21 AS build
 
 WORKDIR /app
 
 COPY . .
 
-RUN chmod +x ./gradlew
+RUN gradle clean bootJar --no-daemon -x test
 
-RUN ./gradlew clean bootJar --no-daemon -x test
+FROM eclipse-temurin:21
+
+WORKDIR /app
+
+COPY --from=build /app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -jar build/libs/*.jar"]
+CMD ["java", "-jar", "app.jar"]
