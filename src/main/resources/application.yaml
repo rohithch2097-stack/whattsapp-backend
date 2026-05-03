@@ -7,9 +7,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://dpg-d7rn3omgkk3c738nufq0-a.oregon-postgres.render.com:5432/postgres_h0qf?sslmode=require
+    url: jdbc:postgresql://dpg-d7rn3omgkk3c738nufq0-a.oregon-postgres.render.com:5432/postgres_h0qf
     username: postgres_h0qf_user
-    password: xqfbLGrQd5TOQ63qyQDjW2rH2iGmJQZ3
+    password: xqfbLGrQd5T0Q63qyQDjW2rH2iGmJQZ3
 
   jpa:
     hibernate:
